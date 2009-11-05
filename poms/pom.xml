@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <parent>
+      <groupId>org.gatherdata</groupId>
+      <artifactId>gather-camel</artifactId>
+      <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.gatherdata.gather-camel.build</groupId>
+  <artifactId>shared-plugin-settings</artifactId>
+
+  <name>gather-camel - plugin configuration</name>
+
+  <packaging>pom</packaging>
+
+  <modules>
+      <module>wrappers</module>
+      <module>compiled</module>
+  </modules>
+
+  <build>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                  <groupId>org.ops4j</groupId>
+                  <artifactId>maven-pax-plugin</artifactId>
+                  <!--
+                   | enable improved OSGi compilation support for the bundle life-cycle.
+                   | to switch back to the standard bundle life-cycle, move this setting
+                   | down to the maven-bundle-plugin section
+                   -->
+                  <extensions>true</extensions>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>maven-bundle-plugin</artifactId>
+                  <version>1.4.3</version>
+              </plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
+
+  <dependencyManagement>
+      <dependencies>
+          <dependency>
+              <!--
+               | dependency pom representing the global classpath of imported bundles
+               -->
+              <type>pom</type>
+              <groupId>org.gatherdata.gather-camel.build</groupId>
+              <artifactId>provision</artifactId>
+              <version>1.0-SNAPSHOT</version>
+              <scope>provided</scope>
+              <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>org.osgi</groupId>
+              <artifactId>osgi_R4_core</artifactId>
+              <version>1.0</version>
+              <scope>provided</scope>
+              <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>org.osgi</groupId>
+              <artifactId>osgi_R4_compendium</artifactId>
+              <version>1.0</version>
+              <scope>provided</scope>
+              <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>junit</groupId>
+              <artifactId>junit</artifactId>
+              <version>${junit.version}</version>
+              <scope>test</scope>
+          </dependency>
+          <dependency>
+              <groupId>junit</groupId>
+              <artifactId>junit-dep</artifactId>
+              <version>${junit.version}</version>
+              <scope>test</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.hamcrest</groupId>
+              <artifactId>hamcrest-all</artifactId>
+              <version>${hamcrest.version}</version>
+              <scope>test</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.easymock</groupId>
+              <artifactId>com.springsource.org.easymock</artifactId>
+              <version>${easymock.version}</version>
+              <scope>test</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.camel</groupId>
+              <artifactId>camel-core</artifactId>
+              <version>${apache-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.camel</groupId>
+              <artifactId>camel-osgi</artifactId>
+              <version>${apache-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.ops4j</groupId>
+              <artifactId>peaberry</artifactId>
+              <version>1.1.1</version>
+          </dependency>
+          <dependency>
+              <groupId>org.ops4j.peaberry.dependencies</groupId>
+              <artifactId>guice</artifactId>
+              <version>2.0-SNAPSHOT</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.servicemix.bundles</groupId>
+              <artifactId>org.apache.servicemix.bundles.aopalliance</artifactId>
+              <version>1.0_1</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.servicemix.bundles</groupId>
+              <artifactId>org.apache.servicemix.bundles.commons-io</artifactId>
+              <version>1.3.2_1</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-commons</groupId>
+              <artifactId>org.gatherdata.commons.core</artifactId>
+              <version>${gather-commons.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-camel</groupId>
+              <artifactId>org.gatherdata.camel.service.archive</artifactId>
+              <version>${gather-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-camel</groupId>
+              <artifactId>org.gatherdata.camel.service.alert</artifactId>
+              <version>${gather-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-camel</groupId>
+              <artifactId>org.gatherdata.camel.core</artifactId>
+              <version>${gather-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-camel</groupId>
+              <artifactId>org.gatherdata.camel.route.xforms</artifactId>
+              <version>${gather-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-archiver</groupId>
+              <artifactId>org.gatherdata.archiver.core</artifactId>
+              <version>${gather-archiver.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-alert</groupId>
+              <artifactId>org.gatherdata.alert.core</artifactId>
+              <version>${gather-alert.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-data</groupId>
+              <artifactId>org.gatherdata.data.core</artifactId>
+              <version>${gather-data.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.gatherdata.gather-camel</groupId>
+              <artifactId>org.gatherdata.camel.service.data</artifactId>
+              <version>${gather-camel.version}</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.camel</groupId>
+              <artifactId>camel-test</artifactId>
+              <version>${apache-camel.version}</version>
+              <scope>test</scope>
+          </dependency>
+
+      </dependencies>
+  </dependencyManagement>
+</project>
