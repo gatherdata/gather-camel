@@ -54,37 +54,65 @@
   </modules>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.ops4j</groupId>
-        <artifactId>maven-pax-plugin</artifactId>
-        <version>1.4</version>
-        <configuration>
-          <framework>felix</framework>
-          <profiles>log,ds,web</profiles>
-          <!-- noDependencies=true to force all deployabled bundles to be part of a feature -->
-          <noDependencies>true</noDependencies>
-          <provision>
-            <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
-            <param>scan-features:mvn:org.neo4j.apoc-bundle/org.neo4j.neo.karaf/1.0-SNAPSHOT/xml/features!/neo4j-meta</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-service</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/eclipselink,gather-hsqldb</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-commons.db4o</param>
-            <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/camel-dependencies</param>
-            <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.db4o</param>
-            <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.felix</param>
-            <param>scan-features:mvn:org.gatherdata.gather-alert/org.gatherdata.alert.features/${gather-alert.version}/xml/features!/gather-alert.all</param>
-            <param>scan-features:mvn:org.gatherdata.gather-alert/org.gatherdata.alert.features/${gather-alert.version}/xml/features!/gather-alert.felix</param>
-            <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.jpa</param>
-            <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.felix</param>
-            <!-- for testing only -->
-            <!--param>mvn:org.gatherdata.gather-alert/org.gatherdata.alert.builder/${gather-alert.version}</param-->
-          </provision>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+      <plugins>
+          <plugin>
+              <groupId>org.ops4j</groupId>
+              <artifactId>maven-pax-plugin</artifactId>
+              <version>1.4</version>
+              <configuration>
+                  <framework>felix</framework>
+                  <profiles>log,ds,web</profiles>
+                  <!-- noDependencies=true to force all deployabled bundles to be part of a feature -->
+                  <noDependencies>true</noDependencies>
+                  <provision>
+                      <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
+                      <param>scan-features:mvn:org.neo4j.apoc-bundle/org.neo4j.neo.karaf/1.0-SNAPSHOT/xml/features!/neo4j-meta</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-service</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/eclipselink,gather-hsqldb</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-commons.db4o</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/camel-dependencies</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.db4o</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.felix</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-alert/org.gatherdata.alert.features/${gather-alert.version}/xml/features!/gather-alert.all</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-alert/org.gatherdata.alert.features/${gather-alert.version}/xml/features!/gather-alert.felix</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.jpa</param>
+                      <param>scan-features:mvn:org.gatherdata.gather-data/org.gatherdata.data.features/${gather-data.version}/xml/features!/gather-data.felix</param>
+                      <!-- for testing only -->
+                      <!--param>mvn:org.gatherdata.gather-alert/org.gatherdata.alert.builder/${gather-alert.version}</param-->
+                      </provision>
+                  </configuration>
+              </plugin>
+              <plugin>
+                  <inherited>false</inherited>
+                  <groupId>com.google.code.maven-license-plugin</groupId>
+                  <artifactId>maven-license-plugin</artifactId>
+                  <version>1.4.0</version>
+                  <configuration>
+                      <header>${basedir}/etc/header.txt</header>
+                      <failIfMissing>true</failIfMissing>
+                      <aggregate>true</aggregate>
+                      <properties>
+                          <owner>AED</owner>
+                          <year>2009</year>
+                          <email>info@gatherdata.org</email>
+                      </properties>
+                      <includes>
+                          <include>**/src/**/*.java</include>
+                      </includes>
+                  </configuration>
+                  <executions>
+                      <execution>
+                          <id>check-headers</id>
+                          <phase>verify</phase>
+                          <goals>
+                              <goal>check</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+              </plugin>
+          </plugins>
+      </build>
 
   <repositories>
       <repository>
