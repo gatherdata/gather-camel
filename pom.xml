@@ -66,9 +66,7 @@
                   <noDependencies>true</noDependencies>
                   <provision>
                       <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
-                      <param>scan-features:mvn:org.neo4j.apoc-bundle/org.neo4j.neo.karaf/1.0-SNAPSHOT/xml/features!/neo4j-meta</param>
                       <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
-                      <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/neo4j-service</param>
                       <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/eclipselink,gather-hsqldb</param>
                       <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-commons.db4o</param>
                       <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/camel-dependencies</param>
@@ -133,20 +131,16 @@
   </repositories>
 
   <distributionManagement>
-    <!-- 
-            NOTE: this uses an internal server run by Andreas Kollegger
-            which is ~not~ available on the Internet. 
-     -->
-    <repository>
-      <id>tembo.releases</id>
-      <name>Tembo Internal Releases</name>
-      <url>http://fatty-server.local.:8081/nexus/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>tembo.snapshots</id>
-      <name>Tembo Internal Snapshots</name>
-      <url>http://fatty-server.local.:8081/nexus/content/repositories/snapshots</url>
-    </snapshotRepository>
+      <repository>
+          <id>gather.releases</id>
+          <name>GATHERdata Releases</name>
+          <url>http://repository.gatherdata.org/content/repositories/releases</url>
+      </repository>
+      <snapshotRepository>
+          <id>gather.snapshots</id>
+          <name>GATHERdata Snapshots</name>
+          <url>http://repository.gatherdata.org/content/repositories/snapshots</url>
+      </snapshotRepository>
   </distributionManagement>
 
 </project>
