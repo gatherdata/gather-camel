@@ -12,7 +12,6 @@ import static org.ops4j.peaberry.Peaberry.osgiModule;
 
 import java.util.logging.Logger;
 
-import org.apache.felix.shell.Command;
 import org.ops4j.peaberry.Export;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -27,9 +26,9 @@ public final class OSGiActivator
     implements BundleActivator
 {
     private static final transient Logger log = Logger.getLogger(OSGiActivator.class.getName());
-    
+
     @Inject
-    Export<Command> camelContextCommand;
+    Export<CamelCommands> camelCommands;
     
     /**
      * Called whenever the OSGi framework starts our bundle

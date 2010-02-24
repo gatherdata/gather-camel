@@ -22,8 +22,6 @@ import org.gatherdata.camel.core.Workflow;
 import org.gatherdata.camel.core.WorkflowFactory;
 import org.osgi.framework.BundleContext;
 
-import com.google.inject.Inject;
-
 /**
  * Example implementation of a gather-camel RouteProvider.
  * 

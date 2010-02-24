@@ -1,67 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <parent>
-        <relativePath>../poms/compiled/</relativePath>
-        <groupId>org.gatherdata.gather-camel.build</groupId>
-        <artifactId>compiled-bundle-settings</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-
-    <properties>
-        <bundle.symbolicName>org.gatherdata.camel.command</bundle.symbolicName>
-        <bundle.namespace>org.gatherdata.camel.command</bundle.namespace>
-    </properties>
-
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.gatherdata.gather-camel</groupId>
-    <artifactId>org.gatherdata.camel.command</artifactId>
+  <parent>
+    <relativePath>../poms/compiled/</relativePath>
+    <groupId>org.gatherdata.gather-camel.build</groupId>
+    <artifactId>compiled-bundle-settings</artifactId>
     <version>1.0-SNAPSHOT</version>
+  </parent>
 
-    <name>gather-camel - felix commands</name>
+  <properties>
+    <bundle.symbolicName>org.gatherdata.camel.command</bundle.symbolicName>
+    <bundle.namespace>org.gatherdata.camel.command</bundle.namespace>
+  </properties>
 
-    <packaging>bundle</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.gatherdata.gather-camel</groupId>
+  <artifactId>org.gatherdata.camel.command</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.shell</artifactId>
-            <version>1.0.2</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j</groupId>
-            <artifactId>peaberry</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.aopalliance</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.peaberry.dependencies</groupId>
-            <artifactId>guice</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.gatherdata.gather-camel</groupId>
-            <artifactId>org.gatherdata.camel.core</artifactId>
-            <version>${gather-camel.version}</version>
-        </dependency>        
-    </dependencies>
+  <name>gather-camel :: shell commands</name>
+
+  <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_core</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi_R4_compendium</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix.karaf.shell</groupId>
+      <artifactId>org.apache.felix.karaf.shell.console</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j</groupId>
+      <artifactId>peaberry</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.servicemix.bundles</groupId>
+      <artifactId>org.apache.servicemix.bundles.aopalliance</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.gatherdata.gather-camel</groupId>
+      <artifactId>org.gatherdata.camel.core</artifactId>
+      <version>${gather-camel.version}</version>
+    </dependency>
+  </dependencies>
 
 </project>
