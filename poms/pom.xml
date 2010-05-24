@@ -105,14 +105,16 @@
               <version>${apache-camel.version}</version>
           </dependency>
           <dependency>
-              <groupId>org.ops4j</groupId>
-              <artifactId>peaberry</artifactId>
-              <version>1.1.1</version>
+            <groupId>org.ops4j</groupId>
+            <artifactId>peaberry</artifactId>
+            <version>${peaberry.version}</version>
+            <scope>provided</scope>
           </dependency>
           <dependency>
-              <groupId>org.ops4j.peaberry.dependencies</groupId>
-              <artifactId>guice</artifactId>
-              <version>2.0-SNAPSHOT</version>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+            <scope>provided</scope>
           </dependency>
           <dependency>
               <groupId>org.apache.servicemix.bundles</groupId>

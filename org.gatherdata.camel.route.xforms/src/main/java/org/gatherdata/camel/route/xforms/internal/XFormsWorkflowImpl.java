@@ -101,8 +101,8 @@ public final class XFormsWorkflowImpl implements XFormsWorkflow, WorkflowFactory
                                 ARCHIVE_QUEUE,
                                 ALERT_QUEUE
                                 )
-                        .process(toFlatFormStorage)
-                        .to("log:xforms-workflow?level=DEBUG")
+                    .process(toFlatFormStorage)
+                    .to("log:xforms-workflow?level=DEBUG&showHeaders=true")
                     ;
                 
                 from(ARCHIVE_QUEUE)
