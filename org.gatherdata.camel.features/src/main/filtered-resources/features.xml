@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<features>     
+<features name="gather-camel ${gather-camel.version}">     
 
     <feature name="camel-dependencies" version="1.0-SNAPSHOT">
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_1</bundle>
