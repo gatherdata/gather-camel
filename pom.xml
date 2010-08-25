@@ -86,8 +86,8 @@
 
             <param>scan-features:mvn:org.apache.camel.karaf/apache-camel/${apache-camel.version}/xml/features!/camel-osgi</param>
             <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/1.0.1-SNAPSHOT/xml/features!/eclipselink</param>
-            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/1.0.0/xml/features!/gather-hsqldb</param>
+            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/eclipselink</param>
+            <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-hsqldb</param>
             <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-commons.db4o</param>
             <param>scan-features:mvn:org.gatherdata.gather-camel/org.gatherdata.camel.features/${gather-camel.version}/xml/features!/camel-dependencies</param>
             <param>scan-features:mvn:org.gatherdata.gather-archiver/org.gatherdata.archiver.features/${gather-archiver.version}/xml/features!/gather-archiver.db4o</param>
