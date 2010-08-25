@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<features>     
+<features name="gather-camel ${gather-camel.version}">     
 
     <feature name="camel-dependencies" version="1.0-SNAPSHOT">
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_1</bundle>
@@ -14,13 +14,13 @@
         <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.service.archive/${gather-camel.version}</bundle>
         <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.service.alert/${gather-camel.version}</bundle>
         <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.service.data/${gather-camel.version}</bundle>
-        <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.route.xforms/${gather-camel.version}</bundle>
     </feature>
 
     <feature name="gather-camel.example" version="${gather-camel.version}">
         <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.command/${gather-camel.version}</bundle>
         <bundle>mvn:org.gatherdata.gather-alert/org.gatherdata.alert.builder/${gather-alert.version}</bundle>
         <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.example.plans/${gather-camel.version}</bundle>
+        <bundle>mvn:org.gatherdata.gather-camel/org.gatherdata.camel.route.xforms/${gather-camel.version}</bundle>
     </feature>
 
     <feature name="activemq-base" version="${activemq.version}">
