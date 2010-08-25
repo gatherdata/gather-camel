@@ -27,8 +27,8 @@ public final class OSGiActivator
 {
     private static final transient Logger log = Logger.getLogger(OSGiActivator.class.getName());
 
-    @Inject
-    Export<CamelCommands> camelCommands;
+//    @Inject
+//    Export<CamelCommands> camelCommands;
     
     /**
      * Called whenever the OSGi framework starts our bundle

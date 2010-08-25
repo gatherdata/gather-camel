@@ -40,7 +40,7 @@
     <gather-data.version>1.0-SNAPSHOT</gather-data.version>
     <!-- 3rd party versions -->
     <activemq.version>5.2.0</activemq.version>
-    <apache-camel.version>2.1.0</apache-camel.version>
+    <apache-camel.version>2.2.0</apache-camel.version>
     <junit.version>4.5</junit.version>
     <hamcrest.version>1.1</hamcrest.version>
     <easymock.version>2.3.0</easymock.version>
@@ -84,7 +84,7 @@
             <!-- http service, to allow testing of http input to routes -->
             <param>mvn:org.ops4j.pax.web/pax-web-jetty-bundle/0.7.2</param>
 
-            <param>scan-features:mvn:org.apache.camel.karaf/features/${apache-camel.version}/xml/features!/camel-osgi</param>
+            <param>scan-features:mvn:org.apache.camel.karaf/apache-camel/${apache-camel.version}/xml/features!/camel-osgi</param>
             <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/${gather-commons.version}/xml/features!/gather-core</param>
             <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/1.0.1-SNAPSHOT/xml/features!/eclipselink</param>
             <param>scan-features:mvn:org.gatherdata.gather-commons/org.gatherdata.commons.features/1.0.0/xml/features!/gather-hsqldb</param>

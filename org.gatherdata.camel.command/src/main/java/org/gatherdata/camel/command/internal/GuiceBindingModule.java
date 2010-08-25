@@ -38,9 +38,9 @@ public class GuiceBindingModule extends AbstractModule {
         Properties commandAttrs = new Properties();
         commandAttrs.put(CommandProcessor.COMMAND_SCOPE, "camel");
         commandAttrs.put(CommandProcessor.COMMAND_FUNCTION, new String[] { "send", "list", "start", "stop" });
-        bind(export(CamelCommands.class)).toProvider(
-                service(CamelCommands.class).attributes(properties(commandAttrs))
-                .export());
+//        bind(export(CamelCommands.class)).toProvider(
+//                service(CamelCommands.class).attributes(properties(commandAttrs))
+//                .export());
         
     }
     
